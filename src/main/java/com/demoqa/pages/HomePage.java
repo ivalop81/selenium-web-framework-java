@@ -3,6 +3,7 @@ package com.demoqa.pages;
 import com.demoqa.pages.elements.ElementsPage;
 import com.demoqa.pages.forms.FormsPage;
 import com.base.BasePage;
+import com.demoqa.pages.widgets.WidgetsPage;
 import org.openqa.selenium.By;
 
 import static utilities.JavaScriptUtility.scrollToElementJS;
