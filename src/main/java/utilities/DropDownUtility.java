@@ -20,4 +20,8 @@ public class DropDownUtility extends Utility {
     public static void selectedByValue(By locator, String value) {
         findDropDown(locator).selectByValue(value);
     }
+
+    public static void deselectedByValue(By locator, String value) {
+        findDropDown(locator).deselectByValue(value);
+    }
 }
