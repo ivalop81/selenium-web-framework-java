@@ -1,7 +1,10 @@
 package part3_4.com.demoqa.tests.part3.widgets;
 
+import org.testng.Assert;
 import org.testng.annotations.Test;
 import part3_4.com.demoqa.base.BaseTest;
+
+import java.util.List;
 
 public class SelectDropDownTests extends BaseTest  {
 
@@ -14,5 +17,13 @@ public class SelectDropDownTests extends BaseTest  {
         selectMenuPage.selectStandardMulti(2);
 
         selectMenuPage.deselectStandardMulti("saab");
+
+        List<String> actualSelectedOptions =
+                selectMenuPage.getAllSelectedStandardMultiOptions();
+        Assert.assertTrue(actualSelectedOptions.contains("Volvo"));
+        Assert.assertTrue(actualSelectedOptions.contains("Opel"));
+        Assert.assertTrue(actualSelectedOptions.contains("Audi"));
+        Assert.assertFalse(actualSelectedOptions.contains("Saab"),
+                "\n Saab Is Selected As An Option \n");
     }
 }
