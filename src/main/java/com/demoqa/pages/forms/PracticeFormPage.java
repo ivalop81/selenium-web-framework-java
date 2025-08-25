@@ -6,10 +6,11 @@ import static utilities.JavaScriptUtility.*;
 
 public class PracticeFormPage extends FormsPage {
 
-    private By femaleRadioButton = By.id("gender-radio-2");
-    private By sportsHobbyCheckbox = By.id("hobbies-checkbox-1");
-    private By readingHobbyCheckbox = By.id("hobbies-checkbox-2");
-    private By musicHobbyCheckbox = By.id("hobbies-checkbox-3");
+    private final By femaleRadioButton = By.id("gender-radio-2");
+    private final By sportsHobbyCheckbox = By.id("hobbies-checkbox-1");
+    private final By readingHobbyCheckbox = By.id("hobbies-checkbox-2");
+    private final By musicHobbyCheckbox = By.id("hobbies-checkbox-3");
+    private final By submitButton = By.id("submit");
 
     public void clickFemaleRadioButton() {
         scrollToElementJS(femaleRadioButton);
@@ -22,7 +23,7 @@ public class PracticeFormPage extends FormsPage {
 
     public void clickSportsCheckBox() {
 
-        if(!find(sportsHobbyCheckbox).isSelected()) {
+        if (!find(sportsHobbyCheckbox).isSelected()) {
             scrollToElementJS(sportsHobbyCheckbox);
             clickJS(sportsHobbyCheckbox);
         }
@@ -30,7 +31,7 @@ public class PracticeFormPage extends FormsPage {
 
     public void clickReadingCheckBox() {
 
-        if(!find(readingHobbyCheckbox).isSelected()) {
+        if (!find(readingHobbyCheckbox).isSelected()) {
             scrollToElementJS(readingHobbyCheckbox);
             clickJS(readingHobbyCheckbox);
         }
@@ -38,7 +39,7 @@ public class PracticeFormPage extends FormsPage {
 
     public void clickMusicCheckBox() {
 
-        if(!find(musicHobbyCheckbox).isSelected()) {
+        if (!find(musicHobbyCheckbox).isSelected()) {
             scrollToElementJS(musicHobbyCheckbox);
             clickJS(musicHobbyCheckbox);
         }
@@ -46,7 +47,7 @@ public class PracticeFormPage extends FormsPage {
 
     public void unclickReadingCheckBox() {
 
-        if(find(readingHobbyCheckbox).isSelected()) {
+        if (find(readingHobbyCheckbox).isSelected()) {
             scrollToElementJS(readingHobbyCheckbox);
             clickJS(readingHobbyCheckbox);
         }
@@ -54,5 +55,10 @@ public class PracticeFormPage extends FormsPage {
 
     public boolean isReadingSelected() {
         return find(readingHobbyCheckbox).isSelected();
+    }
+
+    public void clickSubmitButton() {
+        //scrollToElementJS(submitButton);
+        click(submitButton);
     }
 }
